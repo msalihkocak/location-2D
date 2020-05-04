@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class DrawLines : MonoBehaviour
 {
-    Coords point = new Coords(10,20);
+    Coordinates point = new Coordinates(10,20);
+
+    private readonly Coordinates _yAxisStartPoint = new Coordinates(0,100);
+    private readonly Coordinates _yAxisEndPoint = new Coordinates(0,-100);
     
-    Coords yAxisStartPoint = new Coords(0,100);
-    Coords yAxisEndPoint = new Coords(0,-100);
-    
-    Coords xAxisStartPoint = new Coords(-160,0);
-    Coords xAxisEndPoint = new Coords(160,0);
+    private readonly Coordinates _xAxisStartPoint = new Coordinates(-160,0);
+    private readonly Coordinates _xAxisEndPoint = new Coordinates(160,0);
     
     
     void Start()
     {
         Debug.Log(point.ToString());
-        Coords.DrawPoint(point, 2, Color.blue);
-        Coords.DrawLine(yAxisStartPoint, yAxisEndPoint, 0.4f, Color.green);
-        Coords.DrawLine(xAxisStartPoint, xAxisEndPoint, 0.4f, Color.red);
+        Coordinates.DrawPoint(point, 2, Color.blue);
+        Coordinates.DrawLine(_yAxisStartPoint, _yAxisEndPoint, 0.4f, Color.green);
+        Coordinates.DrawLine(_xAxisStartPoint, _xAxisEndPoint, 0.4f, Color.red);
     }
 
     // Update is called once per frame
